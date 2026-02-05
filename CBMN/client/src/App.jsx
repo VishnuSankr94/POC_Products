@@ -5,7 +5,9 @@ import { CallManager } from './CallManager';
 import './index.css';
 
 // Initialize Socket
-const socket = io('http://localhost:5000');
+// Use environment variable for production, fallback to localhost for dev
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
+const socket = io(SERVER_URL);
 
 function App() {
   const [view, setView] = useState('login'); // login | dashboard | call
