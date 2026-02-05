@@ -1,0 +1,58 @@
+{
+  "name": "meletheruvu-sree-mutharamman-temple",
+  "version": "1.0.0",
+  "description": "Official website for Meletheruvu Sree Mutharamman Temple, Neyyattinkara, Kerala",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server .",
+    "build": "echo 'Static site - no build process needed'",
+    "deploy:netlify": "npx netlify deploy --prod --dir .",
+    "deploy:firebase": "firebase deploy",
+    "lint:html": "npx htmlhint index.html",
+    "lint:css": "npx stylelint styles.css",
+    "lint:js": "npx eslint script.js",
+    "optimize:images": "npx imagemin images/* --out-dir=images/optimized",
+    "test": "npx lighthouse http://localhost:8080 --output html --output-path ./lighthouse-report.html"
+  },
+  "keywords": [
+    "temple",
+    "kerala",
+    "mutharamman",
+    "neyyattinkara",
+    "hindu",
+    "devotion",
+    "festival",
+    "website"
+  ],
+  "author": "Temple Administration",
+  "license": "MIT",
+  "homepage": "https://meletheruvu-mutharamman-temple.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/meletheruvu-mutharamman-temple.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/meletheruvu-mutharamman-temple/issues"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^15.10.3",
+    "eslint": "^8.47.0",
+    "imagemin": "^8.0.1",
+    "lighthouse": "^11.0.0",
+    "netlify-cli": "^16.3.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
