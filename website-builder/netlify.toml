@@ -1,0 +1,29 @@
+[build]
+  # Build command for the React frontend
+  command = "cd client && npm install && npm run build"
+  # Directory where the built files will be located
+  publish = "client/dist"
+  
+  # Environment variables (set these in Netlify dashboard)
+  # [build.environment]
+  #   NODE_VERSION = "18"
+
+# Redirect rules for API calls (if using external backend)
+# Uncomment and update with your backend URL if deploying backend separately
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://your-backend-url.railway.app/api/:splat"
+#   status = 200
+#   force = true
+
+# [[redirects]]
+#   from = "/preview/*"
+#   to = "https://your-backend-url.railway.app/preview/:splat"
+#   status = 200
+#   force = true
+
+# SPA fallback - redirect all non-file requests to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -6,7 +6,8 @@ import { BuildButton } from './components/BuildButton';
 import { SavedSitesList } from './components/SavedSitesList';
 import { PreviewFrame } from './components/PreviewFrame';
 
-const API = '/api';
+// Use environment variable for API URL, fallback to '/api' for relative paths
+const API = import.meta.env.VITE_API_URL || '/api';
 
 function App() {
   const [prompt, setPrompt] = useState('');
