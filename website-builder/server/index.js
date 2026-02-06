@@ -31,7 +31,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const websitesDir = path.join(__dirname, '..', 'websites');
+// Use Render's persistent disk if available, otherwise use relative path
+const websitesDir = process.env.RENDER 
+  ? path.join('/opt/render/project/src', 'websites')
+  : path.join(__dirname, '..', 'websites');
 app.set('websitesDir', websitesDir);
 
 app.use('/api/build', buildRouter);
